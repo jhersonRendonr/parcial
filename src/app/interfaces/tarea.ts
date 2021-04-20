@@ -1,5 +1,9 @@
 export interface tarea {
-    nombre: String;
-    apellido: string;
+id: 1,
+nombre: String;
+apellido: String;
+email: String;
+genero: String;
+telefono: Number;
 
 }

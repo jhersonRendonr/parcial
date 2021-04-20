@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TareaService } from '../../services/tarea.service';
+import { tarea } from '../../interfaces/tarea';
 
 
 @Component({
@@ -9,16 +10,20 @@ import { TareaService } from '../../services/tarea.service';
 })
 export class ClientesNuestrosComponent implements OnInit {
 
-  objeto
+  tarjeta:  tarea [] = []
+  
   constructor(private tareaService: TareaService) { }
+  
 
+  obtenertareas(){  
 
-  obtenertareas(){
-    this.tareaService.gettareas().subscribe(todo => {console.log(todo);
-  });
   }
-
   ngOnInit(): void {
+    this.tareaService.gettareas().subscribe(todo => {this.tarjeta = todo;
+      console.log(this.tarjeta);
+      
+     
+    });    
   }
 
 }
